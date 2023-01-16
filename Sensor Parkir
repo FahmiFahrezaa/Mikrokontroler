@@ -15,28 +15,28 @@ int distance;
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600); //Kecepatan pengiriman data 9600 bit per detik 
-  pinMode(trigPin, OUTPUT); //Setting Trigger sebagai output 
-  pinMode(echoPin, INPUT); //Setting Echo sebagai input 
-  pinMode(buzzer, OUTPUT); //Setting Buzzer sebagai output 
-  pinMode(led, OUTPUT); //Setting led sebagai output 
-  pinMode(button, INPUT); //Setting button sebagai input 
-  lcd.init(); //LCD mulai menyala 
-  lcd.backlight(); //Settingan agar lampu belakang LCD menyala
-  lcd.setCursor(0,0); //Posisi karakter akan ditampilkan dalam LCD
-  lcd.print("Jarak Parkir"); //Karakter yang akan ditampilkan dalam LCD 
-  lcd.setCursor(0,1); //Posisi karakter akan ditampilkan dalam LCD
-  delay(5000); //Durasi waktu karakter tampil dalam LCD yaitu 5 detik 
+  Serial.begin(9600); 
+  pinMode(trigPin, OUTPUT); 
+  pinMode(echoPin, INPUT); 
+  pinMode(buzzer, OUTPUT); 
+  pinMode(led, OUTPUT); 
+  pinMode(button, INPUT); 
+  lcd.init(); 
+  lcd.backlight(); 
+  lcd.setCursor(0,0); 
+  lcd.print("Jarak Parkir"); 
+  lcd.setCursor(0,1); 
+  delay(5000); 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  lcd.clear(); //Hapus karakter di layar LCD 
-  digitalWrite(trigPin, LOW); //Trigger off mengirimkan sinyal 
-  delayMicroseconds(2); //Selang waktu 0.002 detik 
-  digitalWrite(trigPin, HIGH); //Trigger on mengirimkan sinyal 
-  delayMicroseconds(10); // Selang waktu 0.01 detik 
-  digitalWrite(trigPin, LOW); //Trigger off mengirimkan sinyal  
+  lcd.clear(); 
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2); 
+  digitalWrite(trigPin, HIGH); 
+  delayMicroseconds(10); 
+  digitalWrite(trigPin, LOW);  
   
   duration = pulseIn(echoPin, HIGH); //Waktu tempuh sinyal dari dikirim Trigger, memantul, sampai diterima Echo  
   distance = duration * 0.0343/2; //Jarak = (Waktu x Kecepatan)/2 
