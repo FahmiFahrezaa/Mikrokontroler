@@ -1,3 +1,6 @@
+// Fahmi Fahreza Ahmad
+//link simulasi Wokwi ESP32 sensor anti maling : https://wokwi.com/projects/350386775400645203
+
 // Template ID, Device Name and Auth Token are provided by the Blynk.Cloud
 // See the Device Info tab, or Template settings
 #define BLYNK_TEMPLATE_ID           "TMPL0-XiF-ap"
@@ -128,4 +131,3 @@ else {
      
 }
 }
-
